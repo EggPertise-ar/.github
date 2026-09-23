@@ -1,0 +1,63 @@
+name: Task
+description: Tarea relacionada con el configurador
+title: "[TASK] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completa todos los campos obligatorios 
+
+  - type: dropdown
+    id: tipo_de_tarea
+    attributes:
+      label: Tipo de tarea
+      description: ¿Que tipo de tarea es?
+      options:
+        - Organización
+        - Bug/Fix
+        - Mejoras
+        - Feature
+        - Otros
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      placeholder: "Explicación de la necesidad o requerimento"
+    validations:
+      required: true
+    
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance
+      placeholder: "Que implica tu tarea?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: items
+    attributes:
+      label: Items
+      description: Completá cada item con una tarea especifica
+      value: |
+        **Item 1:**
+        - [ ] detalles del item 1
+
+        **Item 2:**
+        - [ ] detalles del item 2
+        
+    validations:
+      required: true
+
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas
+      description: Decisiones de implementación, dependencias con otros servicios
+      placeholder: "Opcional - Notas"
+    validations:
+      required: false
